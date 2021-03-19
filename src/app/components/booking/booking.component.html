@@ -1,0 +1,38 @@
+<div [ngStyle]="{'background-image': 'url(' + restaurant.image + ')'}" class="restaurantImage"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <h1>{{restaurant.name}}</h1>
+            <p>{{restaurant.address}}</p>
+            <p>{{restaurant.description}}</p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <form class="booking-form" [formGroup]="bookingForm" (ngSubmit)="sendBooking()">
+                <h1>Realiza tu reserva</h1>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Personas</mat-label>
+                        <input type="number" formControlName="customers" matInput>                        
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Turno</mat-label>
+                        <mat-select formControlName="time">
+                            <mat-option *ngFor = "let restaurantTime of restaurant.turn" [value]="restaurantTime.id">
+                                {{restaurantTime.name}}
+                            </mat-option>                           
+                        </mat-select>                  
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Día</mat-label>
+                        <input matInput [matDatepicker]="date" formControlName="date">
+                        <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+                        <mat-datepicker #date></mat-datepicker>
+                    </mat-form-field>                        
+                </div>
+                <div class="text-right">
+                    <button type="submit" mat-button color="primary" [disabled]="!bookingForm.valid">Enviar Reserva</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

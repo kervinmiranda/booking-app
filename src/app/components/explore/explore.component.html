@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12  col-md-4" *ngFor = "let restaurant of restaurants">
+            <mat-card class="card-theme">
+                <mat-card-header>
+                </mat-card-header>
+                <img mat-card-image class="imageCard" src="{{ restaurant.image }}" alt="Restaurante">
+                <mat-card-content>
+                    <mat-card-title>{{ restaurant.name }}</mat-card-title>
+                    <mat-card-subtitle>{{ restaurant.address }}</mat-card-subtitle>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button [routerLink]="['booking', restaurant.id]">RESERVAR</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>            
+    </div>
+</div>
