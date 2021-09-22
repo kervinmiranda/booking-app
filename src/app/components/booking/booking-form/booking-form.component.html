@@ -1,6 +1,14 @@
 <form class="booking-form" [formGroup]="bookingForm" (ngSubmit)="sendBooking()">
     <h1>Realiza tu reserva</h1>
     <div>
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input type="text" formControlName = "name" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="email" formControlName = "email" matInput>
+        </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Personas</mat-label>
             <input type="number" formControlName="customers" matInput>                        

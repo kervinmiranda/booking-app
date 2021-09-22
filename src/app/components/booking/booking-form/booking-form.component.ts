@@ -30,7 +30,9 @@ export class BookingFormComponent implements OnInit {
     this.bookingForm = this.fb.group({
       date: [new Date(), Validators.required],
       time: ['', Validators.required],
-      customers: ['', Validators.required]
+      customers: ['', Validators.required],
+      email: ['', Validators.required],
+      name: ['', Validators.required]
     })
   }
 
@@ -39,8 +41,10 @@ export class BookingFormComponent implements OnInit {
     this.booking.turnoId = this.bookingForm.get('time').value;
     this.booking.date = this.bookingForm.get('date').value;
     this.booking.person = this.bookingForm.get('customers').value;
+    this.booking.name = this.bookingForm.get('name').value;
+    this.booking.email = this.bookingForm.get('email').value;
     this.booking.price = this.restaurant.price;
-  } 
+  }
 
   sendBooking() {
     this.setBooking();

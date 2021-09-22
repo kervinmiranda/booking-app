@@ -1,17 +1,28 @@
 .restaurantImage {
-    height: 25vw;
+    height: 70vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.restaurantbackground {
+    height: 95%;
+    background-size: cover;
+    background-position: center;
     min-height: 630px;
+    width: 100%;
+    background-attachment: fixed;
 }
 
-.booking-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
+.pTop50 {
+    padding-top: 50px;
 }
 
-mat-form-field {
-    width: 100%;
+@media only screen and (max-width: 767px) {
+    .container {
+        overflow-x: auto;
+    }
+    .restaurantbackground {
+        height: 180%;
+    }
 }
