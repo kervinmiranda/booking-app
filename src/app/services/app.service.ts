@@ -14,15 +14,15 @@ export class AppService {
   constructor(private http: HttpClient) { }
 
   getAllRestaurants() {
-    return this.http.get( API + 'restaurants');
+    return this.http.get(API + 'restaurants');
   }
 
   getRestaurant(id: number) {
-    return this.http.get( API + 'restaurant' + '/' + id);
+    return this.http.get(API + 'restaurant' + '/' + id);
   }
 
   createReservation(booking: Booking) {
-    return this.http.post( API + 'reservation', booking);
+    return this.http.post(API + 'reservation', booking);
   }
 
   cancelReservation(reservationCode: string) {
@@ -31,10 +31,10 @@ export class AppService {
         'Content-Type': 'application/json'
       })
     }
-    return this.http.delete( API + 'deleteReservation?Locator='+reservationCode, options);
+    return this.http.delete(API + 'deleteReservation?Locator='+ reservationCode, options);
   }
 
-  getAllRestaurantsMock() {
+  /* getAllRestaurantsMock() {
     const restaurants: LightRestaurant[] = [];
 
     let restaurant = new LightRestaurant;
@@ -54,5 +54,5 @@ export class AppService {
     restaurants.push(restaurant);
     restaurants.push(restaurant2);
     return of(restaurants);
-  }
+  } */
 }

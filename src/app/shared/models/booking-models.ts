@@ -1,6 +1,9 @@
 export class Booking {
-    restaurantId: Number;
+    restaurantId: number;
     date: any;
-    turnoId: Number;
-    person: Number;
+    turnoId: number;
+    person: number;
+    email: string;
+    name: string;
+    price: number;
 }
