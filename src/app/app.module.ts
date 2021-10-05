@@ -22,12 +22,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { BookingFormComponent } from './components/booking/booking-form/booking-form.component';
 import { InfoDialogComponent } from './shared/dialogs/info-dialog/info-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PaymentComponent } from './components/payment/payment.component';
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 const appRoutes: Routes = [
   { path: '', component: ExploreComponent },
   { path: 'booking/:id', component: BookingComponent },
-  { path: 'cancel', component: CancelBookingComponent }
+  { path: 'cancel', component: CancelBookingComponent },
+  { path: 'payment', component: PaymentComponent }
 ]
 
 @NgModule({
@@ -38,7 +41,8 @@ const appRoutes: Routes = [
     CancelBookingComponent,
     HeaderComponent,
     BookingFormComponent,
-    InfoDialogComponent
+    InfoDialogComponent,
+    PaymentComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -58,7 +62,8 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatNativeDateModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatStepperModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
