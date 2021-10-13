@@ -12,4 +12,12 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  cancel() {
+    console.log("cancel");
+  }
+
+  confirm() {
+    console.log("confirm");
+  }
+
 }

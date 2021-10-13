@@ -1,4 +1,4 @@
-<form class="booking-form" [formGroup]="bookingForm" (ngSubmit)="sendBooking()">
+<form class="booking-form" [formGroup]="bookingForm">
     <h1>Realiza tu reserva</h1>
     <div>
         <mat-form-field>
@@ -15,7 +15,7 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>Turno</mat-label>
-            <mat-select formControlName="time">
+            <mat-select formControlName="time" matInput>
                 <mat-option *ngFor = "let restaurantTime of restaurant.turn" [value]="restaurantTime.id">
                     {{restaurantTime.name}}
                 </mat-option>                           
@@ -29,6 +29,7 @@
         </mat-form-field>                        
     </div>
     <div class="text-right">
-        <button type="submit" mat-button color="primary" [disabled]="!bookingForm.valid">Enviar Reserva</button>
+        <button (click)="sendBooking()"  type="submit" mat-button color="primary" [disabled]="!bookingForm.valid">Reservar</button>
+        <button (click)="payBooking()" mat-button color="secundary" [disabled]="!bookingForm.valid">Resevar y pagar</button>
     </div>
 </form>

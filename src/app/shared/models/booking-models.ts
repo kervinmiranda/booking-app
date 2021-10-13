@@ -1,7 +1,7 @@
 export class Booking {
     restaurantId: number;
     date: any;
-    turnoId: number;
+    turnId: number;
     person: number;
     email: string;
     name: string;
