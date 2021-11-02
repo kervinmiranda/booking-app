@@ -24,6 +24,7 @@ import { InfoDialogComponent } from './shared/dialogs/info-dialog/info-dialog.co
 import { MatDialogModule } from '@angular/material/dialog';
 import { PaymentComponent } from './components/payment/payment.component';
 import { MatStepperModule } from '@angular/material/stepper';
+import { NgxStripeModule } from 'ngx-stripe';
 
 
 const appRoutes: Routes = [
@@ -61,7 +62,8 @@ const appRoutes: Routes = [
     MatNativeDateModule,
     MatInputModule,
     MatDialogModule,
-    MatStepperModule    
+    MatStepperModule,
+    NgxStripeModule.forRoot('pk_test_51IS2cJJMUhWV3iEpbxnZAIwgd3ClP9yxyxQZfRb3UhGEzHRuF2jYqwmZwxJZw0T7gnPNHbUBI8T3hkSPNwoWY2nh009mPuscZt')
   ],
   providers: [],
   bootstrap: [AppComponent]
